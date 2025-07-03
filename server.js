@@ -9,7 +9,7 @@ const saltRounds = 12;
 const myPlaintextPassword = 'sUperpassw0rd!';
 const someOtherPlaintextPassword = 'pass123';
 
-app.get('/'{req,res}=>{
+app.get('/',{req,res}=>{
     res.send("Hello world");
 });
 
