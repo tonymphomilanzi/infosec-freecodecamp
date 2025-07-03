@@ -14,14 +14,16 @@ app.get('/', (req, res) => {
 })
 
 //START_ASYNC -do not remove notes, place code between correct pair of notes.
-var hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);
-console.log(hash);
+bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
+  console.log(hash);
+});
 
 //END_ASYNC
 
 //START_SYNC
 
-
+const hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);
+console.log(hash);
 
 //END_SYNC
 
